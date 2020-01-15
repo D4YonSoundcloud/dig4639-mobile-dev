@@ -12,8 +12,9 @@ function scopeDemo() {
 
 function runOnLoad()
 {
-    console.log(x);
+    //console.log(x);
     var submitButton = document.getElementById("submitButton");
+    console.log(submitButton);
     submitButton.addEventListener("click",onClick);
     var submitButton = document.getElementById("");
 }
