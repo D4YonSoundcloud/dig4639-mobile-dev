@@ -1,0 +1,31 @@
+instagram 
+
+upload a photo
+
+const uploadButton
+
+uploadPicture = () => {
+    if(uploadbutton){
+       open camera roll;
+       take selected photo;
+        var photo = photo;
+        if(photo){
+            allow editing;
+            add script;
+            add tags;
+            add location;
+            var confirm = button;
+            if(button){
+                upload picture (add photo to database);
+            } 
+        } else {
+            return to home
+        }
+    } return;
+}
+
+visual changes = taken to another component where the processing takes place, can change the data of the img to allow for a different visual look
+data changes = creates a copy of the original file and then uploads a new file
+
+NicoleS5
+InkShriek
