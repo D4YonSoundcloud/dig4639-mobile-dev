@@ -1,19 +1,20 @@
 class Adder {
-  constructor(a, b) {
-    this.a = a;
-    this.b = b;
-    this.sum = function() {
-      let z = a + b;
-      if (a && b) {
+  constructor(props) {
+    this.props = props;
+  }
+
+    sum() {
+      let z = this.props.a + this.props.b;
+      if (this.props.a && this.props.b) {
         return `${z}`;
       } else {
         return `null`;
       }
+    
     };
-  }
 
   render() {
-    return `<p>The sum of ${this.a} and ${this.b} is ${this.sum()}</p>`;
+    return `<p>The sum of ${this.props.a} and ${this.props.b} is ${this.sum()}</p>`;
   }
 }
 

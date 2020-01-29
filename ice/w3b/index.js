@@ -15,6 +15,7 @@ function runOnLoad()
     // console.log(x);
     var comp = new Component(document.getElementById("submitButton"));
 }
+
 var a = 0;
 a = 10;
 console.log(a);
