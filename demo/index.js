@@ -61,7 +61,7 @@ let todoList = [
 
 printTodo = arrayInput => {
   const htmlArray = arrayInput.map(value => {
-    `<p ${value.complete ? "class=done" : ""}> ${value.priority} : ${
+    `<p ${value.complete ? 'class=done' : ''}> ${value.priority} : ${
       value.content
     } </p>`;
   });
