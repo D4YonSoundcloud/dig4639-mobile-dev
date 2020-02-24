@@ -1,9 +1,13 @@
+<<<<<<< HEAD
 import { Sum } from "./MyMath.js";
 import { AddList } from "./MyMath.js";
 import { DivideBy } from "./MyMath.js";
 import { ContainsString } from "./MyMath.js";
 import { ReSortedNumbers } from "./MyMath.js";
 import { Adder } from "./MyMath.js";
+=======
+import { Sum } from './MyMath.js'
+>>>>>>> fe277fcee38e1b953a813f52fa2d0a9fceacf0f6
 
 describe("Sum", () => {
   test("adds 1 + 2 to equal 3", () => {

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 export function Sum(a, b) {
   let result = undefined;
   if (typeof a === "number" && typeof b === "number") {
@@ -67,3 +68,12 @@ export function ReSortedNumbers([]) {
 }
 
 export function Adder() {}
+=======
+function Sum (a, b) {
+  return a + b
+}
+
+console.log(Sum(2,3));
+
+export { Sum };
+>>>>>>> fe277fcee38e1b953a813f52fa2d0a9fceacf0f6
