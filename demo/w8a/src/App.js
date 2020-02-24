@@ -10,6 +10,7 @@ export class App extends Component {
     todos: []
   };
 
+  //add commit
   markComplete = id => {
     this.setState({
       todos: this.state.todos.map(todo => {
