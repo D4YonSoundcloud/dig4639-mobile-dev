@@ -1,14 +1,24 @@
-import React, { Component } from 'react'
-import './index.css';
+import React, { Component } from "react";
+import "./index.css";
 
 export class Card extends Component {
-    render() {
-        return (
-            <div className="card">
-                This is a card
-            </div>
-        )
-    }
+  markComplete = e => {
+    this.props.completed = !this.props.completed;
+  };
+  
+  render() {
+    return (
+      <div className="card">
+        {this.props.content}
+        <input
+          type="checkbox"
+          ref="cardCheckbox"
+          onChange={e => markComplete(e)}
+          className="close"
+        />
+      </div>
+    );
+  }
 }
 
-export default Card
+export default Card;

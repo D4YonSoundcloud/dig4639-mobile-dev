@@ -3,11 +3,4 @@
   max-width: 300px;
   margin: auto;
   text-align: center;
-  padding: 20px;
-}
-
-.close {
-  font-size: 1.5em;
-  float: right;
-  cursor: pointer;
 }

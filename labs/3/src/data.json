@@ -1,0 +1,22 @@
+{
+    "cards": [
+        {
+            "title": "Max",
+            "content": "Enjoys the beach.",
+            "completed": "false",
+            "id": 1
+        },
+        {
+            "title": "Maggie",
+            "content": "Loves to run.",
+            "completed": "false",
+            "id": 2
+        },
+        {
+            "title": "Buddy",
+            "content": "Sniffs butts.",
+            "completed": "false",
+            "id": 3
+        }
+    ]
+}
