@@ -25,13 +25,14 @@ class Todos extends React.Component {
   removeTask = id => {
     let todoList = todoList1;
     console.log(todoList);
-    todoList = todoList.filter((v) => v.id !== v.id);
+    todoList = todoList.filter((v) => v.id !== id);
     console.log('error');
     this.setState({todoList});
+    console.log('changed state');
   };
 
   render() {
-    const { todoList1, hideCompletedItems } = this.state;
+    // const { todoList1, hideCompletedItems } = this.state;
 
     return (
       <Fragment>
@@ -44,7 +45,7 @@ class Todos extends React.Component {
           id="hideCompletedItems"
           value="hidecompletedItems"
           onChange={e =>
-            this.setState({ hideCompletedItems: !hideCompletedItems })
+            this.setState({ hideCompletedItems: e.target.checked })
           }
         />
         <label For="hideCompletedItems">I have a bike</label>
