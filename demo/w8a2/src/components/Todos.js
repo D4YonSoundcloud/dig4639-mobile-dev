@@ -22,10 +22,12 @@ class Todos extends React.Component {
     this.setState({ todoList });
   };
 
-  removeTask = e => {
-    let todoList = this.state.todoList1;
-    todoList = todoList.Filter(v => v.id !== v.id);
-    this.setState({ todoList });
+  removeTask = id => {
+    let todoList = todoList1;
+    console.log(todoList);
+    todoList = todoList.filter((v) => v.id !== v.id);
+    console.log('error');
+    this.setState({todoList});
   };
 
   render() {
@@ -52,7 +54,7 @@ class Todos extends React.Component {
         ).map(v => (
           <TodoItem
             id={v.id}
-            removeTask={id => this.removeTask(v.id)}
+            removeTask={id => this.removeTask(id)}
             key={v.id}
             className="card"
             content={v.content}
