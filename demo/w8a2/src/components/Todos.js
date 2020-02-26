@@ -12,16 +12,21 @@ class Todos extends React.Component {
   addTask = e => {
     console.log("add task");
     let todoList = todoList1;
-    todoList.push({"id": this.state.id, "completed": true, "priority": this.refs.taskPriority.value, "content": this.refs.taskText.value});
-    this.state.id++
-    this.setState({todoList});
-  }
+    todoList.push({
+      id: this.state.id,
+      completed: true,
+      priority: this.refs.taskPriority.value,
+      content: this.refs.taskText.value
+    });
+    this.state.id++;
+    this.setState({ todoList });
+  };
 
   removeTask = e => {
-      let todoList = this.state.todoList1;
-      todoList = todoList.Filter((v) => v.id !== id);
-      this.setState({todoList})
-  }
+    let todoList = this.state.todoList1;
+    todoList = todoList.Filter(v => v.id !== v.id);
+    this.setState({ todoList });
+  };
 
   render() {
     const { todoList1, hideCompletedItems } = this.state;
@@ -42,10 +47,12 @@ class Todos extends React.Component {
         />
         <label For="hideCompletedItems">I have a bike</label>
         {(this.state.hideCompletedItems
-          ? todoList1.filter(v => !v.completed)
-          : todoList1
+          ? this.state.todoList1.filter(v => !v.completed)
+          : this.state.todoList1
         ).map(v => (
           <TodoItem
+            id={v.id}
+            removeTask={id => this.removeTask(v.id)}
             key={v.id}
             className="card"
             content={v.content}
