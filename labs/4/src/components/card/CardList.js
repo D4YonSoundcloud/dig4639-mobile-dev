@@ -8,12 +8,13 @@ class CardList extends React.Component {
   };
 
   deleteCard = e => {
+    console.log(this.state.CardData);
     e.preventDefault();
-    let localCards = this.state.CardData.cards;
-    let cardCompleted = e.target.getAttribute('completed');
+    let localCards = this.state.CardData;
+    let cardCompleted = e.target.getAttribute("completed");
     console.log(cardCompleted);
     console.log(localCards);
-    let newCards = localCards.filter(card => {
+    let newCards = localCards.cards.filter(card => {
       return card.completed !== cardCompleted;
     });
     console.log(newCards);
