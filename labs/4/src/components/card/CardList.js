@@ -4,17 +4,16 @@ import CardData from "../../data.json";
 
 class CardList extends React.Component {
   state = {
-    CardData
+    CardData: CardData.cards
   };
 
   deleteCard = e => {
     console.log(this.state.CardData);
-    e.preventDefault();
     let localCards = this.state.CardData;
     let cardCompleted = e.target.getAttribute("completed");
     console.log(cardCompleted);
-    console.log(localCards);
-    let newCards = localCards.cards.filter(card => {
+    console.log(localCards[2].completed);
+    let newCards = localCards.filter(card => {
       return card.completed !== cardCompleted;
     });
     console.log(newCards);
@@ -25,7 +24,7 @@ class CardList extends React.Component {
   render() {
     return (
       <div>
-        {this.state.CardData.cards.map(v => (
+        {this.state.CardData.map(v => (
           <Card
             key={v.id}
             title={v.title}
