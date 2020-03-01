@@ -9,11 +9,11 @@ export class Card extends Component {
       <div className="card">
         <h3>{this.props.title}</h3>
         {this.props.content}
-        <button
+        <input
           type="checkbox"
           ref="cardCheckbox"
           className="close"
-          onClick={this.props.deleteCard}
+          onChange={this.props.deleteCard}
           value="x"
         />
       </div>
