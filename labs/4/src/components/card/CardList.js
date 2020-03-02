@@ -4,35 +4,33 @@ import CardData from "../../data.json";
 
 class CardList extends React.Component {
   state = {
-    CardData: CardData.cards
+    CardData,
+    hideCompleted: false
   };
 
-  deleteCard = e => {
+  deleteCard = id => {
     console.log(this.state.CardData);
-    let localCards = this.state.CardData;
-    let cardCompleted = e.target.getAttribute("completed");
-    console.log(cardCompleted);
-    console.log(localCards[2].completed);
-    let newCards = localCards.filter(card => {
-      return card.completed !== cardCompleted;
-    });
-    console.log(newCards);
-    this.setState({ CardData: newCards });
-    console.log("worked");
+    let CardData = this.state.CardData.cards;
+    console.log(CardData);
+    CardData = CardData.filter(v => v.id != id);
+    console.log(CardData);
+    this.setState({ CardData });
   };
 
   render() {
     return (
       <div>
-        {this.state.CardData.map(v => (
-          <Card
-            key={v.id}
-            title={v.title}
-            completed={v.completed}
-            content={v.content}
-            deleteCard={this.deleteCard}
-          ></Card>
-        ))}
+        {this.state.hideCompleted
+          ? this.state.CardData.cards.filter(v => !v.completed)
+          : this.state.CardData.cards.map(v => (
+              <Card
+                key={v.id}
+                title={v.title}
+                completed={v.completed}
+                content={v.content}
+                deleteCard={this.deleteCard}
+              ></Card>
+            ))}
       </div>
     );
   }

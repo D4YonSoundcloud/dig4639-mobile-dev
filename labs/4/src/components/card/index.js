@@ -8,14 +8,7 @@ export class Card extends Component {
     return (
       <div className="card">
         <h3>{this.props.title}</h3>
-        {this.props.content}
-        <input
-          type="checkbox"
-          ref="cardCheckbox"
-          className="close"
-          onChange={this.props.deleteCard}
-          value="x"
-        />
+        <p onClick={() => this.props.deleteCard(this.props.id)}>{this.props.content}</p>
       </div>
     );
   }
