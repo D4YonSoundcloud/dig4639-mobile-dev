@@ -3,20 +3,18 @@ import Card from "./index";
 import CardData from "../../data.json";
 
 let cards = CardData.cards;
-let card = cards.splice();
-console.log(card);
 
 class CardList extends React.Component {
-
   state = {
     CardData: cards,
     hideCompleted: false
   };
 
   deleteCard = id => {
+    console.log(id);
     console.log(this.state.CardData);
     let newCardData = this.state.CardData.filter(v => v.id !== id);
-    this.setState({ CardData: newCardData});
+    this.setState({ CardData: newCardData });
   };
 
   render() {
@@ -29,11 +27,12 @@ class CardList extends React.Component {
           ? cards.filter(v => !v.completed)
           : cards.map(card => (
               <Card
+                id={card.id}
                 key={card.id}
                 title={card.title}
                 completed={card.completed}
                 content={card.content}
-                deleteCard={card.deleteCard}
+                deleteCard={this.deleteCard}
               ></Card>
             ))}
       </div>
